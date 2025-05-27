@@ -1,0 +1,691 @@
+/* 
+  ==================================================================================
+  1. GLOBAL / UNIVERSAL STYLES
+  ==================================================================================
+*/
+
+/* 1.1 Base HTML & Global Elements */
+html {
+  font-family: "Roboto", sans-serif;
+  font-size: 16px; /* 1rem = 16px */
+}
+
+body {
+  line-height: 1.5;
+  color: #4a4a4a;
+  margin: 0;
+  padding: 0;
+}
+
+.center {
+  text-align: center;
+}
+
+.image-container {
+  overflow: hidden;
+}
+
+.image-container img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+.button {
+  display: inline-block;
+  width: 24rem;
+  height: 4rem;
+  border-radius: 0.25rem;
+  background-color: #4a4a4a;
+  color: #ffffff;
+  font-size: 1.25rem;
+  font-family: "Roboto", sans-serif;
+  line-height: 1.4;
+  text-align: center;
+  cursor: pointer;
+  text-decoration: none;
+  transition: background-color 0.2s ease-in-out;
+}
+
+.button:hover {
+  background-color: #333333;
+}
+
+/*
+  (9) For MOBILE Join Us button:
+  - Apple green color (#9dc20b or your chosen “apple green”)
+  - 3px padding horizontally & vertically
+  - White text
+*/
+.join-us-mobile {
+  background-color: #9dc20b !important;
+  color: #ffffff !important;
+  width: auto !important; /* Let the button shrink to text */
+  height: auto !important;
+  padding: 3px 3px !important; /* 3px both horizontally & vertically */
+}
+
+/*
+  MAIN CONTENT
+  – Using margin-top so the fixed header
+    doesn't overlap the content.
+*/
+.main-content {
+  margin-top: 5.3125rem;
+  padding-bottom: 0;
+}
+
+/* 1.2 Media Queries – Global Breakpoints */
+@media only screen and (min-width: 48rem) and (max-width: 62rem) {
+  body {
+    font-size: 15px;
+  }
+  .main-content {
+    margin-top: 4rem;
+  }
+}
+
+@media only screen and (max-width: 47.5rem) {
+  .main-content {
+    margin-top: 2.5625rem; /* 41px => 2.5625rem */
+  }
+}
+
+/* 
+  ==================================================================================
+  2. HEADER STYLES
+  ==================================================================================
+*/
+
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  border-bottom: 0.0625rem solid #c6c1c1;
+  background-color: #ffffff;
+  z-index: 999;
+}
+
+/*
+  (9) In mobile => max-height: 48px
+*/
+@media only screen and (max-width: 47.5rem) {
+  header {
+    max-height: 48px;
+  }
+}
+
+header .content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 2rem 1.5rem;
+}
+
+/* Desktop/Tablet Logo */
+header .logo {
+  flex: 1;
+  font-size: 1.5rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  color: #4a4a4a;
+}
+
+/* 2.2 Navigation */
+header nav ul {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+nav li {
+  padding-left: 3rem;
+}
+
+nav a {
+  vertical-align: bottom;
+  line-height: 1.6;
+  font-size: 1rem;
+  color: #4a4a4a;
+  text-decoration: none;
+  font-weight: 400;
+}
+
+/* Header Icons */
+header .icon {
+  width: 1rem;
+  padding-left: 0.75rem;
+}
+
+/* Desktop/Tablet vs. Mobile Menus */
+header .mobile {
+  display: none;
+}
+header .desktop {
+  display: block;
+}
+header .tablet {
+  display: none;
+}
+
+/* (10) Already replaced text with icons in mobile nav 
+   => The HTML already has it. 
+*/
+
+/* 
+  (9) Mobile Join Us button changes done above (.join-us-mobile).
+*/
+
+/* Header Media Queries */
+@media only screen and (max-width: 62rem) and (min-width: 48rem) {
+  /* TABLET => show .tablet, hide .desktop */
+  header .desktop {
+    display: none;
+  }
+  header .tablet {
+    display: block;
+  }
+}
+
+@media only screen and (max-width: 47.5rem) {
+  header .desktop {
+    display: none;
+  }
+  header .tablet {
+    display: none;
+  }
+  header .mobile {
+    display: block;
+    width: 100%;
+  }
+  header .content {
+    padding: 1rem;
+  }
+  header .mobile ul {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+  }
+  header .mobile li {
+    padding: 0;
+  }
+}
+
+/* 
+  ==================================================================================
+  3. SIGN-UP (HERO) SECTION
+  ==================================================================================
+*/
+
+#sign-up-section {
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  height: 45rem;
+  background: url("./resources/images/hero-bg.jpg") center/cover no-repeat;
+}
+
+#sign-up-cta {
+  padding: 2rem 3rem;
+  margin: 4rem 0 0 4rem;
+  border: 0.0625rem solid #979797;
+  border-radius: 0.25rem;
+  background-color: #9dc20b;
+  box-shadow: 0 0.25rem 1rem rgba(0, 0, 0, 0.1);
+}
+
+#sign-up-cta .content {
+  width: 25rem;
+  margin-top: 1rem;
+  font-family: "Roboto", sans-serif;
+  font-size: 1.25rem;
+  line-height: 1.4;
+  color: #ffffff;
+}
+
+#sign-up-cta h1 {
+  font-size: 3rem;
+  margin-bottom: 0.5rem;
+  color: #ffffff;
+}
+
+#sign-up-cta h2 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  color: #ffffff;
+}
+
+#sign-up-cta span strong {
+  font-weight: bold;
+  color: #ffffff;
+}
+
+#sign-up-cta .cursive {
+  font-family: "Damion", cursive;
+}
+
+#sign-up-cta .striking {
+  font-family: "Rubik", sans-serif;
+  padding-bottom: 0.75rem;
+}
+
+#sign-up-cta .button {
+  margin-top: 1.5rem;
+  padding: 1rem 3rem;
+  font-size: 1.125rem;
+}
+
+/* Sign-Up Media Queries */
+@media only screen and (max-width: 62rem) {
+  #sign-up-section {
+    height: 35rem;
+  }
+  #sign-up-cta h1 {
+    font-size: 2.5rem;
+  }
+  #sign-up-cta h2 {
+    font-size: 1.75rem;
+  }
+}
+
+@media only screen and (max-width: 47.5rem) {
+  #sign-up-section {
+    align-items: center;
+    justify-content: center;
+    height: auto;
+    padding: 2rem;
+    background: none;
+  }
+  #sign-up-cta {
+    position: static;
+    margin: 0;
+    width: auto;
+    height: auto;
+    background-color: transparent;
+    border: none;
+    box-shadow: none;
+  }
+  #sign-up-cta .content {
+    margin-top: 0;
+    text-align: center;
+  }
+  #sign-up-cta .email {
+    display: none;
+  }
+  #sign-up-cta h1 {
+    font-size: 2rem;
+  }
+  #sign-up-cta h2 {
+    font-size: 1.5rem;
+  }
+}
+
+@media only screen and (max-width: 28.125rem) {
+  #sign-up-section {
+    height: auto;
+  }
+  #sign-up-cta h1 {
+    font-size: 1.75rem;
+  }
+  #sign-up-cta h2 {
+    font-size: 1.25rem;
+  }
+}
+
+/* 
+  ==================================================================================
+  4. FEATURES SECTION
+  ==================================================================================
+*/
+
+#features-section {
+  display: flex;
+  justify-content: space-between;
+  gap: 2rem;
+  padding: 4rem 5%;
+  background-color: #f3f3f3;
+}
+
+.feature {
+  flex: 1;
+  background-color: #ffffff;
+  padding: 2rem;
+  border-radius: 0.25rem;
+  box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.05);
+}
+
+/* (7) Align text center in desktop & mobile, left in tablet 
+   -> We'll do it by controlling the .feature .content text-align. 
+   -> Also requirement (8) first feature bg in mobile => #features-section .feature:first-of-type
+*/
+.feature .content {
+  text-align: center; /* desktop default => center */
+}
+
+.feature .image-container {
+  width: 100%;
+  margin: 0 auto 1rem auto;
+}
+
+.feature h2 {
+  margin: 0 0 1rem 0;
+  font-size: 2rem;
+  font-weight: bold;
+  color: #4a4a4a;
+}
+
+.feature h3 {
+  font-size: 1rem;
+  line-height: 1.4;
+  font-weight: 300;
+  color: #4a4a4a;
+}
+
+/* Features Media Queries */
+@media only screen and (max-width: 62rem) and (min-width: 48rem) {
+  /* Tablet => left align text */
+  .feature .content {
+    text-align: left;
+  }
+}
+
+@media only screen and (max-width: 62rem) {
+  #features-section {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  .feature {
+    flex: 0 1 calc(50% - 2rem);
+    margin-bottom: 2rem;
+  }
+}
+
+@media only screen and (max-width: 55.625rem) {
+  .feature h2 {
+    font-size: 1.25rem;
+    line-height: 1.3;
+    font-weight: 600;
+  }
+  .feature h3 {
+    font-size: 0.875rem;
+    line-height: 1.4;
+  }
+}
+
+/* Mobile => center text again */
+@media only screen and (max-width: 47.5rem) {
+  #features-section {
+    flex-direction: column;
+    gap: 1.5rem;
+    padding: 2rem;
+  }
+  .feature {
+    margin: 0;
+    padding: 1.25rem;
+    flex: 1 0 100%;
+  }
+  .feature .content {
+    text-align: center; /* back to center on mobile */
+  }
+
+  /* (8) First feature => light grey on mobile */
+  #features-section .feature:first-of-type {
+    background-color: #e0e0e0; /* light grey */
+  }
+}
+
+/* 
+  ==================================================================================
+  5. FILTERS SECTION
+  ==================================================================================
+*/
+
+#filters-section {
+  /* (4) Pictures at bottom => use align-items: flex-end or min-height approach.
+     We'll do min-height so the images sit at the bottom visually.
+     Also add "display: flex; flex-direction: column;" 
+     so we can push the images container to the bottom.
+  */
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start; /* We'll handle final alignment below */
+  background-color: #4a4a4a;
+  text-align: center;
+  /* We remove default 4rem padding => we'll fine-tune with new instructions. */
+  /* (1) and (2) handle text spacing. */
+}
+
+/* (1) 64px padding ABOVE the h2 => we can do padding-top on the .content. */
+#filters-section .content {
+  padding-top: 64px; /* (1) */
+  /* (2) 80px padding BELOW the h3 => we do margin-bottom on the h3, 
+     or padding-bottom on .content. We'll do padding-bottom for clarity. */
+  padding-bottom: 80px;
+  margin-bottom: 0; /* ensure no extra margin */
+  /* center text is okay */
+}
+
+/* Keep your existing rules for .content h2 / h3 but remove conflicting margins */
+#filters-section .content h2 {
+  font-size: 2.25rem;
+  font-weight: bold;
+  color: #ffffff;
+  margin-bottom: 1rem;
+}
+
+#filters-section .content h3 {
+  font-size: 1rem;
+  line-height: 1.4;
+  font-weight: 300;
+  color: #ffffff;
+  margin-bottom: 0; /* we handle spacing in the .content padding-bottom above */
+}
+
+/*
+  (4) The images are at the bottom. We'll use 
+      "align-items: flex-end" on a flex container 
+      that wraps them if needed.
+*/
+#filters-section .images-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  /* align-items: flex-end => keeps them at the bottom 
+     if their parent's height is set. 
+     Another approach is to rely on no bottom padding so 
+     images sit flush at the bottom. */
+  align-items: flex-end;
+  gap: 0;
+  margin-top: auto; /* push images to the bottom of #filters-section if #filters-section has a set height */
+  padding: 0 1px;
+}
+
+/* 4 columns above 600px, 3 below => hide 4th image */
+#filters-section .images-container > .image-container {
+  flex: 0 0 25%;
+  box-sizing: border-box;
+}
+@media only screen and (max-width: 600px) {
+  #filters-section .images-container > .image-container {
+    flex: 0 0 33.333%;
+  }
+  #filters-section .images-container > .image-container:nth-of-type(4) {
+    display: none;
+  }
+}
+
+/* Standard styling for images */
+#filters-section .images-container > .image-container img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* If needed for extra images */
+#filters-section .extra {
+  /* optional */
+}
+
+/* Mobile / smaller screen adjustments */
+@media only screen and (max-width: 47.5rem) {
+  /* minimal changes from your existing code */
+  #filters-section .content {
+    /* keep the 64px top, 80px bottom if you want */
+    padding-top: 64px;
+    padding-bottom: 80px;
+  }
+  #filters-section .images-container {
+    margin-top: auto;
+  }
+}
+
+/* 
+  ==================================================================================
+  6. QUOTES SECTION
+  ==================================================================================
+*/
+
+/* (5) 30px space between quote and the logo => margin-bottom on the quote. */
+#quotes-section {
+  background-color: #f3f3f3;
+  text-align: center;
+  padding: 2rem 1rem;
+}
+
+#quotes-section .content {
+  margin: 0 auto;
+  max-width: 60rem;
+}
+
+.quote-container {
+  display: flex;
+  align-items: center;
+  gap: 30px; /* (5) 30px space between quote & logo */
+  flex-wrap: nowrap; /* we’ll override in tablet/mobile if needed */
+  margin: 0 auto;
+  max-width: 60rem;
+}
+
+/* (6) For desktop => center align both quote & logo 
+      For tablet => quote left, logo right
+      For mobile => center, with logo stacking under quote
+*/
+.quote-container .quote {
+  /* We'll set alignment rules in media queries */
+  flex: 0 0 auto;
+  margin: 0;
+}
+
+.quote-container .quote-citation {
+  flex: 0 0 auto;
+  text-align: right;
+}
+
+/* Common quote styling */
+#quotes-section .quote {
+  display: block;
+  margin-bottom: 0;
+  font-family: "Palatino", serif;
+  font-size: 1.875rem;
+  line-height: 1.3;
+  font-style: italic;
+  color: #4a4a4a;
+}
+
+#quotes-section .quote-citation {
+  display: block;
+  height: auto;
+  vertical-align: middle;
+}
+
+@media only screen and (min-width: 62rem) {
+  /* Desktop => center the entire container content */
+  .quote-container {
+    justify-content: center; /* center align both items horizontally */
+  }
+  .quote-container .quote {
+    text-align: center;
+  }
+  .quote-container .quote-citation {
+    text-align: center;
+  }
+}
+
+@media only screen and (min-width: 48rem) and (max-width: 62rem) {
+  /* Tablet => quote left, logo right */
+  .quote-container {
+    justify-content: space-between;
+  }
+  .quote-container .quote {
+    text-align: left;
+  }
+  .quote-container .quote-citation {
+    text-align: right;
+  }
+}
+
+@media only screen and (max-width: 47.5rem) {
+  /* Mobile => center, stack logo below quote */
+  .quote-container {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .quote-container .quote {
+    text-align: center;
+    margin-bottom: 1rem; /* a little gap before logo */
+  }
+  .quote-container .quote-citation {
+    text-align: center;
+    margin: 0 auto;
+  }
+  #quotes-section .quote {
+    font-size: 1.5rem;
+    line-height: 1.4;
+  }
+}
+
+/* 
+  ==================================================================================
+  7. FOOTER (no changes except for your existing 62px style)
+  ==================================================================================
+*/
+
+footer {
+  height: 62px;
+  background-color: #9b9b9b;
+  padding: 0 32px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  color: #ffffff;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+footer .left {
+}
+
+footer .right {
+  margin-left: auto;
+}
+
+/* Default desktop/tablet text = 12px */
+footer,
+footer .left,
+footer .right {
+  font-size: 12px;
+  line-height: 1.2;
+}
+
+/* Mobile => 10px */
+@media only screen and (max-width: 47.5rem) {
+  footer,
+  footer .left,
+  footer .right {
+    font-size: 10px;
+  }
+}
